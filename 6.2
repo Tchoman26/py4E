@@ -1,0 +1,9 @@
+#Find the position of the last number in the string, and then convert to a float
+
+text = "X-DSPAM-Confidence:    0.8475"
+pos = text.find('0.8475')
+
+print(pos)
+
+textfloat = float(text[pos:])
+print(textfloat)
