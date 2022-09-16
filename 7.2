@@ -1,0 +1,12 @@
+# Use the file name mbox-short.txt as the file name
+# Create a script that will scan through a file and pull out certain values and then average those values with the final print statement
+x = 0
+y = 0
+fname = input("Enter file name: ")
+fh = open(fname)
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:"):
+        continue
+    x = x + 1
+    y = y + float(line[20:])
+print("Average spam confidence:", y/x)
