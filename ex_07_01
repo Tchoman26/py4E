@@ -1,0 +1,7 @@
+#read a file and convert all letters to upper case
+fname = input("Please input file name: ")
+fh = open(fname, 'r')
+for x in fh:
+    y = x.rstrip()
+    y = y.upper()
+    print(y)
