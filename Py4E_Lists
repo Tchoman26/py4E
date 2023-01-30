@@ -1,0 +1,18 @@
+# This is a piece of code that does the following
+list = []
+#opens a file through fhand
+fhand = open('romeo.txt')
+#loops through fhand
+for row in fhand:
+    #strips fhand of the white space on the right side of each line
+    row = row.rstrip()
+    #splits each line into its each variable in based on a space
+    lad = row.split()
+    #loops through each word in each row
+    for word in lad:
+    #if the word is NOT in the variable 'list', then append that word to list
+        if word not in list:
+            list.append(word)
+#sorts each word in list
+list.sort()
+print(list)
