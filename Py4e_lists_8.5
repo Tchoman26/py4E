@@ -1,0 +1,13 @@
+count = 0
+#open a file through the handle fhand
+fhand = open('mbox-short.txt')
+#iterate through each line in the file
+for line in fhand:
+#if the line starts with 'From ', then rstrip, split, and print the second word from each line to find the sender
+    if line.startswith('From '):
+        line = line.rstrip()
+        line = line.split()
+        print(line[1])
+#add 1 to count each time a sender is counted
+        count = count + 1
+print("There were",count,"lines in the file with From as the first word")
