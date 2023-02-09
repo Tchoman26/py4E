@@ -1,0 +1,21 @@
+#establish dictionary and open a file that will be looped through to find the most common sender 
+fromsender = dict()
+name = 'mbox-short.txt'
+handle = open(name)
+#loop through file line by line and if a line starts with 'From ' then split that line, and each line will be stored as a list
+for line in handle:
+    if line.startswith('From '):
+        line = line.split()
+#the email address of the sender is the second word of the list, so line[1] is that second word, and that second word is stored as sender
+        sender = line[1]
+#once a repeated name is found, add one to the value of that name. The name in this instance is the key of the key/value dictionary pair
+        fromsender[sender] = fromsender.get(sender,0) + 1
+        
+#loop through dictionary and determine which the the greatest value of the key/value pairs
+bigcount = None
+bigword = None
+for word,count in fromsender.items():
+    if bigcount is None or count > bigcount:
+        bigword = word
+        bigcount = count
+print(bigword,bigcount)
